@@ -1,0 +1,13 @@
+model,KS,accuracy,ASE,AUC,F1,source
+NN_Regularised,0.1340,0.7000,0.2085,0.5754,0.0323,course_report_table_2
+Logistic Regression,0.1226,0.6963,0.2091,0.5678,0.0000,course_report_table_2
+LR_Stepwise,0.1226,0.6963,0.2091,0.5678,0.0000,course_report_table_2
+RF_Stable,0.1269,0.6938,0.2115,0.5627,0.0316,course_report_table_2
+Decision Tree,0.1115,0.6538,0.2330,0.5552,0.1877,course_report_table_2
+Forest,0.1025,0.6863,0.2149,0.5485,0.0738,course_report_table_2
+Gradient Boosting,0.0940,0.6963,0.2109,0.5485,0.0000,course_report_table_2
+DT_Pruned,0.0784,0.6863,0.2148,0.5459,0.0939,course_report_table_2
+GB_Shrinkage,0.0441,0.6963,0.2112,0.5208,0.0000,course_report_table_2
+SVM,0.0000,0.6963,0.3037,0.5000,0.0000,course_report_table_2
+SVM_Nonlinear,0.0075,0.6963,0.3009,0.5037,0.0000,course_report_table_2
+Neural Network,0.0174,0.6963,0.2128,0.5087,0.0000,course_report_table_2

@@ -18,6 +18,10 @@ The course report documents SAS Model Manager registration and a completed scori
 
 ## Product interpretation / 产品解读
 
+![Reported model metrics](assets/model-comparison.png)
+
+Read the [model decision review / 模型选型复盘](model-decision-review.md) for the **0.0076 AUC difference** versus logistic regression, the majority-class baseline caveat, and a proposed review-capacity evaluation. This is a new interpretation of reported results, not additional trained-model performance.
+
 If future validation justified use, a human-review tool could display ranked applications, case context and model uncertainty. The **proposed** workflow would require a defined review capacity, threshold trade-offs, false-negative costs, fairness checks, monitoring and an override log. None of these interface or operations features were implemented in the coursework.
 
 如后续验证支持使用，可设计人工审核工具，展示待审申请排序、个案信息与模型不确定性。这个**新增产品设想**需要先定义审核容量、阈值取舍、漏检成本、公平性检查、监控与人工改判记录；课程并未实现这些界面和运营功能。

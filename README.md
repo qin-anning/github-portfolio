@@ -13,7 +13,26 @@ These are course projects. They do not claim production deployment, live busines
 
 以上均为课程项目，不宣称生产部署、线上业务收益或已实现搜广推系统。
 
-## Before publishing / 发布前
+## Start here / 展示入口
+
+| Read / 阅读 | What it demonstrates / 展示能力 |
+|---|---|
+| [Retail evidence / 零售亏损分析](retail-profitability-dashboard/analysis-findings.md) | Recalculation of 51,290 rows; market, subcategory and discount comparisons; precise order-loss definitions / 数据复核、业务诊断与指标口径 |
+| [Model decision review / 模型选型复盘](credit-risk-model-evaluation/model-decision-review.md) | Baseline comparison, metric trade-offs and proposed human-review validation / 模型判断与产品取舍 |
+| [Portfolio walkthrough / 项目讲述](portfolio-walkthrough.md) | Evidence-backed project summaries and interview prompts / 有依据的项目描述与面试路径 |
+
+## Reproduce the evidence / 复核图表
+
+Retail aggregates can be rebuilt using Python 3.9+ and the locally held processed data; see the project analysis script. To rebuild the two figures from the committed aggregate CSVs:
+
+```sh
+python -m pip install matplotlib
+python build_figures.py
+```
+
+The figure generator works without the private source transactions. Full Shiny execution still requires R and the four source files listed in the retail README. SAS training cannot be reproduced from this repository alone.
+
+## Remaining work / 后续补充
 
 - Add one screenshot of the dashboard and selected figures from the model report after removing student ID / 脱敏后补充看板截图与模型图表。
 - Confirm source-data redistribution rights / 确认原始数据能否再分发。

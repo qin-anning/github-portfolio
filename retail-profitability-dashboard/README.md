@@ -6,6 +6,12 @@
 
 ## What I built / 项目内容
 
+![Subcategory net profit](assets/subcategory-profit.png)
+
+**New portfolio evidence / 新增复核：** Recomputed **51,290 transaction rows**: overall margin **11.61%**; Tables net profit **−$64,083.39**. Orders containing any loss-making row account for **30.16%**, while orders with negative total profit account for **24.54%**. These are different definitions, calculated over the complete local processed file.
+
+Read the [aggregate findings and full tables](analysis-findings.md), download the [aggregate evidence](retail-evidence.csv), or inspect the [reproducible Python analysis](analyze_retail.py). No customer-level data is published. The figure is an analysis chart, not a Shiny screenshot.
+
 - Interactive R Shiny dashboard with five visualizations: sales and profit trend, category margin, country profitability versus GDP and population, segment margin distribution, and digital-readiness by category. / 包含五组可交互图表的 R Shiny 看板。
 - Country-name normalization, country-year joins, derived profitability and shipping metrics. / 国家名称统一、国家年份关联、利润和配送指标计算。
 - A written analysis translating patterns into questions for pricing, discounts, shipping and market selection. / 将图表发现转化为定价、折扣、配送及市场选择的待验证决策。

@@ -1,4 +1,4 @@
-# Retail Profitability Dashboard | 零售盈利与市场机会看板
+# Retail Profitability Dashboard | 跨境电商利润分析与可视化看板
 
 **Decision question:** Where should a retailer investigate expansion or operational problems when revenue growth alone hides margin risk? This coursework dashboard joins Superstore transactions with World Bank GDP per capita, population and internet-use indicators for 2011–2014. It lets an analyst filter by year, market, category, customer segment and shipping mode.
 
@@ -10,11 +10,14 @@
 
 **New portfolio evidence / 新增复核：** Recomputed **51,290 transaction rows**: overall margin **11.61%**; Tables net profit **−$64,083.39**. Orders containing any loss-making row account for **30.16%**, while orders with negative total profit account for **24.54%**. These are different definitions, calculated over the complete local processed file.
 
+![R Shiny dashboard preview](assets/r-shiny-dashboard-preview.png)
+
 Read the [aggregate findings and full tables](analysis-findings.md), download the [aggregate evidence](retail-evidence.csv), or inspect the [reproducible Python analysis](analyze_retail.py). No customer-level data is published. The figure is an analysis chart, not a Shiny screenshot.
 
-- Interactive R Shiny dashboard with five visualizations: sales and profit trend, category margin, country profitability versus GDP and population, segment margin distribution, and digital-readiness by category. / 包含五组可交互图表的 R Shiny 看板。
+- Interactive R Shiny dashboard with five visualizations: sales and profit trend, category margin, loss-making subcategories, country profitability versus GDP and population, and digital-readiness by category. / 包含五组可交互图表的 R Shiny 看板。
 - Country-name normalization, country-year joins, derived profitability and shipping metrics. / 国家名称统一、国家年份关联、利润和配送指标计算。
 - A written analysis translating patterns into questions for pricing, discounts, shipping and market selection. / 将图表发现转化为定价、折扣、配送及市场选择的待验证决策。
+- Power BI-ready aggregate tables, DAX measures and a three-page build specification using the same metric contract. / 提供同口径的 Power BI 聚合表、DAX 指标与三页搭建说明。
 
 **Authorship:** I completed this coursework independently. / **完成方式：** 本课程项目由我独立完成。
 
@@ -34,16 +37,26 @@ The primary user is a commercial analyst or category manager. The dashboard supp
 
 ## Run locally / 本地运行
 
-Requires R and packages `shiny`, `tidyverse`, `readxl`, `plotly`, `scales`. Place these source files next to `app.R`: `superstore.xlsx`, `external_gdp_per_capita_worldbank.xls`, `external_population_worldbank.xls`, and `external_internet_usage_worldbank.xls`. The original data is not bundled here pending redistribution review. Then run:
+The R Shiny app now runs against the committed, privacy-preserving aggregate CSVs. It requires R plus `shiny`, `dplyr`, `readr`, `plotly` and `scales`.
 
 ```r
-install.packages(c("shiny", "tidyverse", "readxl", "plotly", "scales"))
+install.packages(c("shiny", "dplyr", "readr", "plotly", "scales"))
 shiny::runApp(".")
 ```
 
-World Bank indicator codes: `NY.GDP.PCAP.KD`, `SP.POP.TOTL`, `IT.NET.USER.ZS`. The app expects the World Bank Excel export format with metadata in the first three rows and 2011–2014 columns. The Superstore file must have the columns referenced in `app.R`.
+To rebuild the aggregates from the original local coursework output without modifying it, run:
 
-运行需 R 及上述五个包。将四个源文件放在 `app.R` 同目录，再执行命令。数据暂未打包；世界银行文件需保留前 3 行元信息及 2011–2014 年列。
+```sh
+Rscript scripts/prepare_portfolio_data.R /path/to/processed_superstore_clean.csv
+```
+
+The script reads the processed course data and emits only grouped records; it excludes customer names, customer IDs and order IDs. / 看板使用仓库内的去标识化聚合数据直接运行；需要从原作业复建时，脚本只读取原数据并输出聚合记录，不改写原作业，也不输出客户或订单标识。
+
+## Power BI implementation / Power BI 实现
+
+The repository includes the same aggregate tables used by the R Shiny application, a [DAX measure set](powerbi/measures.dax), and a [three-page Power BI build guide](powerbi/BUILD.md). Profit margin and shipping-day measures use weighted definitions documented in [the data dictionary](data/DATA_DICTIONARY.md).
+
+This macOS environment does not include Power BI Desktop, so no unverified `.pbix` file or Power BI screenshot is claimed. Decompress `market_category_metrics.csv.gz`, import it with `market_context.csv` in Windows Power BI Desktop, and follow the build guide to save `Superstore_Market_Profitability_Dashboard.pbix`. / 当前环境不含 Power BI Desktop，因此仓库不伪造 PBIX 或截图；可按说明解压数据后在 Windows Power BI Desktop 导入并保存。
 
 **Publication note / 发布说明:** no live deployment or real-world outcome is asserted. / 本项目不宣称已上线或产生实际业务收益。
 

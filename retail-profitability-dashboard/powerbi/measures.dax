@@ -1,0 +1,25 @@
+// Table: MarketCategoryMetrics
+
+Total Sales = SUM ( MarketCategoryMetrics[Total_Sales] )
+
+Total Profit = SUM ( MarketCategoryMetrics[Total_Profit] )
+
+Profit Margin = DIVIDE ( [Total Profit], [Total Sales] )
+
+Transaction Lines = SUM ( MarketCategoryMetrics[Transaction_Lines] )
+
+Loss Transaction Lines = SUM ( MarketCategoryMetrics[Loss_Lines] )
+
+Loss Transaction Rate = DIVIDE ( [Loss Transaction Lines], [Transaction Lines] )
+
+Average Shipping Days =
+DIVIDE ( SUM ( MarketCategoryMetrics[Total_Shipping_Days] ), [Transaction Lines] )
+
+Average Discount =
+DIVIDE (
+    SUMX ( MarketCategoryMetrics, MarketCategoryMetrics[Average_Discount] * MarketCategoryMetrics[Transaction_Lines] ),
+    [Transaction Lines]
+)
+
+Tables Profit =
+CALCULATE ( [Total Profit], MarketCategoryMetrics[Sub_Category] = "Tables" )

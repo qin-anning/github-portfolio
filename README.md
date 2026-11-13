@@ -6,7 +6,7 @@ Two independently completed coursework case studies prepared for data and AI pro
 
 | Project / 项目 | Product question / 产品问题 | Evidence / 已有成果 |
 |---|---|---|
-| [Retail profitability dashboard](retail-profitability-dashboard/README.md) / 零售盈利看板 | Which markets and categories deserve attention? / 哪些市场与品类值得优先分析？ | R Shiny application, Superstore and World Bank analysis / Shiny 看板及多源数据分析 |
+| [Retail profitability dashboard](retail-profitability-dashboard/README.md) / 零售盈利看板 | Which markets and categories deserve attention? / 哪些市场与品类值得优先分析？ | R Shiny application, privacy-preserving aggregates and Power BI build assets / Shiny 看板、去标识化聚合数据及 Power BI 搭建资产 |
 | [Credit risk model evaluation](credit-risk-model-evaluation/README.md) / 信用风险模型评估 | Can model scores help prioritize manual review? / 模型评分能否辅助人工复核排序？ | SAS model comparison, evaluation and 100-row scoring test / SAS 模型比较、评估与 100 条评分测试 |
 
 These are course projects. They do not claim production deployment, live business impact, or experience building a search, advertising, or recommendation system.
@@ -23,19 +23,18 @@ These are course projects. They do not claim production deployment, live busines
 
 ## Reproduce the evidence / 复核图表
 
-Retail aggregates can be rebuilt using Python 3.9+ and the locally held processed data; see the project analysis script. To rebuild the two figures from the committed aggregate CSVs:
+Retail aggregates can be rebuilt with the R script using the locally held processed data, while the committed aggregate CSVs let the R Shiny dashboard run without source transactions. The separate Python analysis can rebuild the two static figures:
 
 ```sh
 python -m pip install matplotlib
 python build_figures.py
 ```
 
-The figure generator works without the private source transactions. Full Shiny execution still requires R and the four source files listed in the retail README. SAS training cannot be reproduced from this repository alone.
+The figure generator works without the private source transactions. The R Shiny app runs with R and the committed aggregate CSVs; source transactions are only needed to rebuild those aggregates. SAS training cannot be reproduced from this repository alone.
 
 ## Remaining work / 后续补充
 
-- Add one screenshot of the dashboard and selected figures from the model report after removing student ID / 脱敏后补充看板截图与模型图表。
-- Confirm source-data redistribution rights / 确认原始数据能否再分发。
-- Verify the Shiny app with R and the four source files / 使用 R 和四个源文件运行看板。
+- Build and save the documented Power BI report in Windows Power BI Desktop / 在 Windows Power BI Desktop 中完成并保存文档化的 Power BI 看板。
+- Confirm source-data redistribution rights before publishing transaction-level data / 发布交易级数据前确认原始数据再分发权利。
 
 Prepared locally in October 2026. / 2026 年 10 月本地整理。

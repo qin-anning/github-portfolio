@@ -1,6 +1,8 @@
 # Power BI 看板搭建
 
-先解压 `data/market_category_metrics.csv.gz` 为同名 CSV，再导入该 CSV 并命名为 `MarketCategoryMetrics`，然后导入 `data/market_context.csv` 并命名为 `MarketContext`。`Year` 应为整数；销售额、利润和运输成本应为货币或小数；人口和交易行数应为整数。
+在 Power BI Desktop 创建一个名为 `SourceFolder` 的文本参数，值为本仓库 `data` 文件夹的绝对路径。然后依次打开“转换数据 → 高级编辑器”，粘贴 `queries/MarketCategoryMetrics.pq` 和 `queries/MarketContext.pq`。前者会直接读取压缩的聚合 CSV，后者读取市场背景 CSV；无需手工解压数据。
+
+将两个查询分别命名为 `MarketCategoryMetrics` 与 `MarketContext`。`Year` 应为整数；销售额、利润和运输成本应为货币或小数；人口和交易行数应为整数。
 
 将 [measures.dax](measures.dax) 中的度量创建在 `MarketCategoryMetrics` 表。不要把利润率或平均运输天数改为简单平均。
 

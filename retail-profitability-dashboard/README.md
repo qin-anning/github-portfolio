@@ -54,7 +54,7 @@ The script reads the processed course data and emits only grouped records; it ex
 
 ## Power BI implementation / Power BI 实现
 
-The repository includes the same aggregate tables used by the R Shiny application, a [DAX measure set](powerbi/measures.dax), and a [three-page Power BI build guide](powerbi/BUILD.md). Profit margin and shipping-day measures use weighted definitions documented in [the data dictionary](data/DATA_DICTIONARY.md).
+The repository includes the same aggregate tables used by the R Shiny application, ready-to-paste [Power Query import scripts](powerbi/queries), a [DAX measure set](powerbi/measures.dax), and a [three-page Power BI build guide](powerbi/BUILD.md). Profit margin and shipping-day measures use weighted definitions documented in [the data dictionary](data/DATA_DICTIONARY.md).
 
 This macOS environment does not include Power BI Desktop, so no unverified `.pbix` file or Power BI screenshot is claimed. Decompress `market_category_metrics.csv.gz`, import it with `market_context.csv` in Windows Power BI Desktop, and follow the build guide to save `Superstore_Market_Profitability_Dashboard.pbix`. / 当前环境不含 Power BI Desktop，因此仓库不伪造 PBIX 或截图；可按说明解压数据后在 Windows Power BI Desktop 导入并保存。
 

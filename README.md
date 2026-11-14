@@ -1,17 +1,16 @@
 # Product portfolio | 产品作品集
 
-Two independently completed coursework case studies prepared for data and AI product internships. They show how I frame a business decision, define metrics, examine data, and state the limits of a result. Original assignment briefs and grading materials are excluded.
+Two independently completed coursework case studies prepared for data and AI product internships. They show how I frame a business decision, define metrics, examine data, and state the limits of a result. Original assignment briefs.
 
-两项均由我独立完成，基于课程成果整理，面向数据产品和 AI 产品实习。重点展示业务问题、指标口径、数据分析和结果边界。已排除课程题目及评分材料。
-
+两项均由我独立完成，基于课程成果整理，面向数据产品和 AI 产品实习。重点展示业务问题、指标口径、数据分析和结果边界。
 | Project / 项目 | Product question / 产品问题 | Evidence / 已有成果 |
 |---|---|---|
 | [Retail profitability dashboard](retail-profitability-dashboard/README.md) / 零售盈利看板 | Which markets and categories deserve attention? / 哪些市场与品类值得优先分析？ | R Shiny application, privacy-preserving aggregates and Power BI build assets / Shiny 看板、去标识化聚合数据及 Power BI 搭建资产 |
 | [Credit risk model evaluation](credit-risk-model-evaluation/README.md) / 信用风险模型评估 | Can model scores help prioritize manual review? / 模型评分能否辅助人工复核排序？ | SAS model comparison, evaluation and 100-row scoring test / SAS 模型比较、评估与 100 条评分测试 |
 
-These are course projects. They do not claim production deployment, live business impact, or experience building a search, advertising, or recommendation system.
+These are course projects. 
 
-以上均为课程项目，不宣称生产部署、线上业务收益或已实现搜广推系统。
+以上均为课程项目。
 
 ## Start here / 展示入口
 
